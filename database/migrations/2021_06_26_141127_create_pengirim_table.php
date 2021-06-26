@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSupirTable extends Migration
+class CreatePengirimTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateSupirTable extends Migration
      */
     public function up()
     {
-        Schema::create('supir', function (Blueprint $table) {
+        Schema::create('pengirim', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('hp', 12);
-            $table->string('jk');
+            $table->string('alamat');
+            $table->string('hp');
+            $table->string('barang');
+            $table->integer('berat');
+            $table->integer('jumlah');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateSupirTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supir');
+        Schema::dropIfExists('pengirim');
     }
 }
