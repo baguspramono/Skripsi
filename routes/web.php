@@ -18,3 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+// Pengirim
+Route::prefix('/Pengirim')->group(function () {
+    Route::get('/show', 'PengirimController@index')->name('pengirim.index');
+    Route::post('/inserting', 'PengirimController@insert')->name('pengirim.insert');
+});
